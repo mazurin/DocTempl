@@ -23,8 +23,12 @@ Write-Host "Формирование документов из шаблонов"
 $mode = 0
 $files = @();
 $fields = @();
+$cnt = $args[0];
+if ($cnt -eq "" ) {
+  $cnt = "DocTempl.txt".
+}
 
-$ini = Get-Content -Encoding utf8 $args[0];
+$ini = Get-Content -Encoding utf8 $cnt;
 for ($i = 0; $i -lt $ini.Count; $i++) {
     $line = $ini[$i].trim();
     $line = $ini[$i].trim();
